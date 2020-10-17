@@ -11,9 +11,9 @@
 	<?php do_action('get_header'); ?>
 
 	<div class="site">
-		<header class="site-header">Header</header>
-		<div class="site-content">Content</div>
-		<footer class="site-footer">Footer</footer>
+		<?php get_template_part('templates/partials/header'); ?>
+		<?php get_template_part('templates/partials/content'); ?>
+		<?php get_template_part('templates/partials/footer'); ?>
 	</div>
 
 	<?php do_action('get_footer'); ?>
