@@ -6,7 +6,9 @@
 namespace Cradle;
 
 const INCLUDES = array(
+		'config',
 		'setup',
+		'template-loader',
 	);
 
 $template_directory = get_template_directory();
