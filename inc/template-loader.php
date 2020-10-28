@@ -28,6 +28,7 @@ const QUERY_TYPES = array(
 		'embed',
 		'frontpage',
 		'home',
+		'index',
 		'page',
 		'privacypolicy',
 		'search',
@@ -38,16 +39,14 @@ const QUERY_TYPES = array(
 	);
 foreach (QUERY_TYPES as $type) {
 	add_filter("{$type}_template_hierarchy", function ($templates) {
-		return array_merge($templates,
-				array_map(function ($template) {
-						return TEMPLATE_DIR . "/{$template}";
-					}, $templates)
-			);
+		$new_templates = array_map(function ($template) {
+				return TEMPLATE_DIR . "/{$template}";
+			}, $templates);
+		$templates = array_diff($templates, array('index.php'));
+		$templates = array_merge($templates, $new_templates);
+		return $templates;
 	});
 }
-add_filter('index_template_hierarchy', function () {
-	return array(TEMPLATE_DIR . '/index.php');
-});
 
 /**
  * Loads our base template and passes the current template as an argument.
@@ -55,8 +54,8 @@ add_filter('index_template_hierarchy', function () {
  * @link https://developer.wordpress.org/reference/hooks/template_include/
  */
 add_filter('template_include', function ($template) {
-	$base = get_stylesheet_directory() . '/' . TEMPLATE_DIR . '/' . BASE_TEMPLATE;
-	load_template($base, true, array('template' => $template));
+	$base_template = get_stylesheet_directory() . '/' . TEMPLATE_DIR . '/' . BASE_TEMPLATE;
+	load_template($base_template, true, array('template' => $template));
 	return null;
 });
 
