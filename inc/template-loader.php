@@ -58,26 +58,3 @@ add_filter('template_include', function ($template) {
 	load_template($base_template, true, array('template' => $template));
 	return null;
 });
-
-/**
- * Locates a template part in our template directory.
- *
- * Default $name is `''` instead of `null`.
- *
- * @link https://developer.wordpress.org/reference/functions/get_template_part/
- */
-function get_template_part($slug, $name = '', $args = array()) {
-	do_action("get_template_part_{$slug}", $slug, $name, $args);
-
-	$templates = array();
-	if ($name !== '') {
-		$templates[] = TEMPLATE_DIR . "/{$slug}-{$name}.php";
-	}
-	$templates[] = TEMPLATE_DIR . "/{$slug}.php";
-
-	do_action('get_template_part', $slug, $name, $templates, $args);
-
-	if (!locate_template($templates, true, false, $args)) {
-		return false;
-	}
-}

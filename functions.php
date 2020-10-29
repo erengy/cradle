@@ -6,6 +6,7 @@
 namespace Cradle;
 
 const INCLUDES = array(
+		'template-tags/general',
 		'config',
 		'setup',
 		'template-loader',
