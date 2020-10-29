@@ -5,15 +5,8 @@
 
 namespace Cradle;
 
-const INCLUDES = array(
-		'template-tags/general',
-		'config',
-		'setup',
-		'template-loader',
-	);
+$files = glob(get_template_directory() . '/inc/{,*/}*.php', GLOB_BRACE);
 
-$template_directory = get_template_directory();
-
-foreach (INCLUDES as $file) {
-	require "{$template_directory}/inc/{$file}.php";
+foreach ($files as $file) {
+	require $file;
 }
