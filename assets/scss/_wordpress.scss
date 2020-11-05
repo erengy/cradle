@@ -1,0 +1,133 @@
+// WordPress
+
+////////////////////////////////////////////////////////////////////////////////
+// Alignments
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: $spacer * 1.5;
+  margin-bottom: $spacer;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: $spacer * 1.5;
+  margin-bottom: $spacer;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $spacer;
+}
+
+img {
+  &.alignnone,
+  &.alignleft,
+  &.alignright,
+  .aligncenter {
+    max-width: 100%;
+  }
+
+  &.alignleft,
+  &.alignright, {
+    @include media-breakpoint-down(xs) {
+      display: block;
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+p {
+  .alignleft,
+  .alignright,
+  .aligncenter {
+    margin-top: $spacer * .5;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Media
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Captions
+
+.wp-caption {
+  margin-bottom: $spacer * 1.5;
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wp-caption-text {
+    margin: ($spacer * .5) 0;
+  }
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Galleries
+
+.gallery {
+  margin-bottom: $spacer * 1.5;
+  display: grid;
+  grid-gap: $spacer * 1.5;
+}
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+@for $i from 2 through 9 {
+  .gallery-columns-#{$i} {
+    grid-template-columns: repeat($i, 1fr);
+  }
+}
+
+.gallery-caption {
+  display: block;
+  font-size: $font-size-sm;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Accessibility
+
+.screen-reader-text {
+  @include sr-only;
+  @include sr-only-focusable;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Just to make Theme Check happy
+
+.bypostauthor {
+  display: block;
+}
+
+.sticky {
+  display: block;
+}

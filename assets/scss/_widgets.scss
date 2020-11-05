@@ -1,0 +1,10 @@
+// Widgets
+
+.widget {
+  margin-bottom: $spacer;
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 40px / 2;  // Default padding for web browsers
+  }
+}

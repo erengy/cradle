@@ -1,0 +1,33 @@
+// Comments
+
+#comments {
+  margin-top: $spacer;
+}
+
+.commentlist {
+  list-style: none;
+  padding-left: 0;
+
+  .comment {
+    border-left: 5px solid $gray-200;
+    margin-bottom: $spacer;
+    padding-left: $spacer;
+  }
+
+  .comment-metadata {
+    font-size: $font-size-sm;
+    margin-bottom: $spacer;
+  }
+
+  .comment-content {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul.children {
+    list-style: none;
+    margin-top: $spacer;
+    padding-left: 0;
+  }
+}
