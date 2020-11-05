@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-				<span class="site-title"><?php bloginfo('name'); ?></span>
+				<img class="site-logo" src="<?php echo esc_url(Cradle\get_asset_url('/img/logo.png')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryMenu" aria-controls="primaryMenu" aria-expanded="false" aria-label="<?php _e('Menu', 'cradle'); ?>"><span class="navbar-toggler-icon"></span></button>
 			<?php
