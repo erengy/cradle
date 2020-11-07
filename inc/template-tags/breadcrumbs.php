@@ -75,6 +75,15 @@ function get_breadcrumbs() {
 					'url'  => get_post_type_archive_link($post_type),
 					'text' => get_post_type_object($post_type)->label,
 				);
+			if ($term->parent) {
+				$term_ancestors = get_ancestors($term->term_id, $term->taxonomy);
+				foreach (array_reverse($term_ancestors) as $term_ancestor_id) {
+					$breadcrumbs[] = array(
+							'url'  => get_term_link($term_ancestor_id),
+							'text' => get_term($term_ancestor_id)->name,
+						);
+				}
+			}
 			$breadcrumbs[] = array(
 					'url'  => get_term_link($term),
 					'text' => $term->name,
