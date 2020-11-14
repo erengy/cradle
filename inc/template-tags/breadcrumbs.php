@@ -36,7 +36,7 @@ function get_breadcrumbs() {
 	if (is_search()) {
 		$breadcrumbs[] = array(
 				'url'  => null,
-				'text' => __('Search Results', 'cradle'),
+				'text' => __('Search Results', 'cradle') . ': ' . get_search_query(),
 			);
 		return $breadcrumbs;
 	}
