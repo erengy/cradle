@@ -23,6 +23,13 @@ add_action('after_setup_theme', function () {
 					'script',
 				)
 		);
+	add_theme_support(
+			'post-formats',
+			array(
+					'gallery',
+					'video',
+				)
+		);
 	add_theme_support('post-thumbnails');
 	add_theme_support('title-tag');
 
