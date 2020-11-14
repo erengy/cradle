@@ -6,5 +6,6 @@
 namespace Cradle;
 
 function get_asset_url($file) {
-	return get_template_directory_uri() . '/assets' . $file;
+	$file = ltrim($file, '/');
+	return get_template_directory_uri() . '/assets/' . $file;
 }
