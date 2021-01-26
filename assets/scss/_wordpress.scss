@@ -93,10 +93,17 @@ p {
   margin-bottom: $spacer * 1.5;
   display: grid;
   grid-gap: $spacer * 1.5;
+  @include media-breakpoint-down(md) {
+    grid-gap: $spacer;
+  }
+  @include media-breakpoint-down(xs) {
+    grid-gap: $spacer * .5;
+  }
 }
 
 .gallery-item {
   display: inline-block;
+  margin-bottom: 0;
   text-align: center;
   vertical-align: top;
   width: 100%;
