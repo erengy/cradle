@@ -14,6 +14,10 @@ const THEME_OPTIONS = array(
 				'email'   => 'info@example.com',
 				'phone'   => '+90 555 123 45 67',
 			),
+		'share' => array(
+				'linkedin_source' => 'example.com',
+				'twitter_via' => 'example',
+			),
 		'social' => array(
 				'Facebook'  => '#',
 				'Instagram' => '#',
