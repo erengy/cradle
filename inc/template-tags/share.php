@@ -29,6 +29,15 @@ function get_share_url($service, $url = '', $title = '') {
 					'https://www.linkedin.com/cws/share'
 				);
 
+		case 'telegram':
+			return add_query_arg(
+					array(
+							'text' => $title,
+							'url'  => $url,
+						),
+					'https://t.me/share/url'
+				);
+
 		case 'twitter':
 			return add_query_arg(
 					array(
@@ -37,6 +46,14 @@ function get_share_url($service, $url = '', $title = '') {
 							'via'  => THEME_OPTIONS['share']['twitter_via'],
 						),
 					'https://twitter.com/share'
+				);
+
+		case 'whatsapp':
+			return add_query_arg(
+					array(
+							'text' => "{$title} {$url}",
+						),
+					'https://wa.me/'
 				);
 	}
 
