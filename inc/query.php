@@ -10,7 +10,7 @@ add_action('pre_get_posts', function ($query) {
 		return;
 	}
 
-	if (is_search()) {
+	if ($query->is_search()) {
 		$excluded = array();
 
 		// Remove front page from search results
