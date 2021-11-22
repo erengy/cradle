@@ -13,6 +13,13 @@ const CUSTOM_TAXONOMIES = array(
 		// e.g. 'custom_taxonomy' => 'custom_post_type',
 	);
 
+function get_post_type_label($post_type) {
+	switch ($post_type) {
+		default:
+			return get_post_type_object($post_type)->label;
+	}
+}
+
 function get_breadcrumbs() {
 	global $wp_query;
 
@@ -59,7 +66,7 @@ function get_breadcrumbs() {
 		if (is_post_type_archive()) {
 			$breadcrumbs[] = array(
 					'url'  => get_post_type_archive_link(get_post_type()),
-					'text' => get_post_type_object(get_query_var('post_type'))->label,
+					'text' => get_post_type_label(get_query_var('post_type')),
 				);
 
 		} else if (is_author()) {
@@ -76,7 +83,7 @@ function get_breadcrumbs() {
 					: 'post';
 			$breadcrumbs[] = array(
 					'url'  => get_post_type_archive_link($post_type),
-					'text' => get_post_type_object($post_type)->label,
+					'text' => get_post_type_label($post_type),
 				);
 			if ($term->parent) {
 				$term_ancestors = get_ancestors($term->term_id, $term->taxonomy);
@@ -103,7 +110,7 @@ function get_breadcrumbs() {
 			$post_type = $_post->post_type;
 			$breadcrumbs[] = array(
 					'url'  => get_post_type_archive_link($post_type),
-					'text' => get_post_type_object($post_type)->label,
+					'text' => get_post_type_label($post_type),
 				);
 			$taxonomy = array_key_exists($post_type, CUSTOM_POST_TYPES)
 					? CUSTOM_POST_TYPES[$post_type]
