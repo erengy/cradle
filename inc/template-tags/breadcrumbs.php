@@ -6,7 +6,11 @@
 namespace Cradle;
 
 const CUSTOM_POST_TYPES = array(
-		// e.g. 'custom_post_type' => 'custom_post_type_category',
+		// e.g. 'custom_post_type' => 'custom_taxonomy',
+	);
+
+const CUSTOM_TAXONOMIES = array(
+		// e.g. 'custom_taxonomy' => 'custom_post_type',
 	);
 
 function get_breadcrumbs() {
@@ -67,9 +71,8 @@ function get_breadcrumbs() {
 
 		} elseif (is_category() || is_tag() || is_tax()) {
 			$term = $wp_query->get_queried_object();
-			$custom_taxonomies = array_flip(CUSTOM_POST_TYPES);
-			$post_type = array_key_exists($term->taxonomy, $custom_taxonomies)
-					? $custom_taxonomies[$term->taxonomy]
+			$post_type = array_key_exists($term->taxonomy, CUSTOM_TAXONOMIES)
+					? CUSTOM_TAXONOMIES[$term->taxonomy]
 					: 'post';
 			$breadcrumbs[] = array(
 					'url'  => get_post_type_archive_link($post_type),
