@@ -1,4 +1,4 @@
 // Disable empty links
-jQuery('[href="#"]').click(function(e) {
-  e.preventDefault();
+document.querySelectorAll('[href="#"]').forEach(element => {
+	element.addEventListener('click', event => event.preventDefault());
 });
