@@ -1,0 +1,14 @@
+/* Screen Options > Screen element > "Some screen elements can be shown or hidden by using the checkboxes..." */
+#screen-meta .metabox-prefs > p {
+  display: none;
+}
+
+/* Appearance > Themes > Customize */
+.theme-actions .button.customize {
+  display: none;
+}
+
+/* Appearance > Widgets/Menus > Manage with Live Preview */
+.page-title-action.hide-if-no-customize {
+  display: none;
+}
