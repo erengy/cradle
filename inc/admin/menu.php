@@ -13,6 +13,7 @@ add_action('wp_before_admin_bar_render', function () {
 add_action('admin_bar_menu', function ($wp_admin_bar) {
 	$wp_admin_bar->remove_node('wp-logo');
 	$wp_admin_bar->remove_node('new-media');
+	$wp_admin_bar->remove_node('new-post');
 	$wp_admin_bar->remove_node('new-user');
 
 	$wp_admin_bar->add_node(
@@ -24,6 +25,8 @@ add_action('admin_bar_menu', function ($wp_admin_bar) {
 }, 999);
 
 add_action('admin_menu', function () {
+	remove_menu_page('edit.php');
+
 	remove_menu_page('edit-comments.php');
 	if (!current_user_can('manage_options')) {
 		remove_menu_page('tools.php');
