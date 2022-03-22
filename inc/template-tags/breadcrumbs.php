@@ -115,12 +115,13 @@ function get_breadcrumbs() {
 			$taxonomy = array_key_exists($post_type, CUSTOM_POST_TYPES)
 					? CUSTOM_POST_TYPES[$post_type]
 					: 'category';
-			$term = get_the_terms($post_id, $taxonomy)[0];
-			if ($term) {
-				$breadcrumbs[] = array(
-						'url'  => get_term_link($term),
-						'text' => $term->name,
-					);
+			if ($terms = get_the_terms($post_id, $taxonomy)) {
+				if ($term = $terms[0]) {
+					$breadcrumbs[] = array(
+							'url'  => get_term_link($term),
+							'text' => $term->name,
+						);
+				}
 			}
 
 		} else if (is_page()) {
