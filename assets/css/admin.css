@@ -3,12 +3,12 @@
   display: none;
 }
 
-/* Appearance > Themes > Customize */
-.theme-actions .button.customize {
+/* Appearance > Widgets/Menus > Manage with Live Preview */
+.page-title-action.hide-if-no-customize {
   display: none;
 }
 
-/* Appearance > Widgets/Menus > Manage with Live Preview */
-.page-title-action.hide-if-no-customize {
+/* Post > Excerpt > "Excerpts are optional hand-crafted summaries..." */
+#postexcerpt #excerpt + p {
   display: none;
 }
