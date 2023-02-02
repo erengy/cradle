@@ -17,15 +17,15 @@ add_action('wp_dashboard_setup', function () {
  * @link https://developer.wordpress.org/reference/hooks/dashboard_glance_items/
  */
 add_action('dashboard_glance_items', function () {
-	$post_types = array(
-			// e.g. 'custom_post_type'
-		);
+	$post_types = [
+		// e.g. 'custom_post_type'
+	];
 
 	foreach ($post_types as $post_type) {
 		$post_type_object = get_post_type_object($post_type);
 
 		if (function_exists('pll_is_translated_post_type') && pll_is_translated_post_type($post_type)) {
-			$num_posts = pll_count_posts(pll_default_language(), array('post_type' => $post_type));
+			$num_posts = pll_count_posts(pll_default_language(), ['post_type' => $post_type]);
 		} else {
 			$num_posts = wp_count_posts($post_type);
 			$num_posts = $num_posts ? $num_posts->publish : 0;

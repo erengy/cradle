@@ -15,52 +15,40 @@ add_action('after_setup_theme', function () {
 	add_theme_support('disable-custom-colors');
 	add_theme_support('disable-custom-font-sizes');
 	add_theme_support('disable-custom-gradients');
-	add_theme_support(
-			'editor-color-palette',
-			array(
-					array(
-							'name'  => esc_attr__('Black', 'cradle'),
-							'slug'  => 'black',
-							'color' => '#000000',
-						),
-					array(
-							'name'  => esc_attr__('Dark', 'cradle'),
-							'slug'  => 'dark',
-							'color' => '#343a40',
-						),
-					array(
-							'name'  => esc_attr__('Light', 'cradle'),
-							'slug'  => 'light',
-							'color' => '#f8f9fa',
-						),
-					array(
-							'name'  => esc_attr__('Primary', 'cradle'),
-							'slug'  => 'primary',
-							'color' => '#007bff',
-						),
-				)
-		);
-	add_theme_support('editor-gradient-presets', array());
+	add_theme_support('editor-color-palette', [
+		[
+			'name'  => esc_attr__('Black', 'cradle'),
+			'slug'  => 'black',
+			'color' => '#000000',
+		],
+		[
+			'name'  => esc_attr__('Dark', 'cradle'),
+			'slug'  => 'dark',
+			'color' => '#343a40',
+		],
+		[
+			'name'  => esc_attr__('Light', 'cradle'),
+			'slug'  => 'light',
+			'color' => '#f8f9fa',
+		],
+		[
+			'name'  => esc_attr__('Primary', 'cradle'),
+			'slug'  => 'primary',
+			'color' => '#007bff',
+		],
+	]);
+	add_theme_support('editor-gradient-presets', []);
 	add_theme_support('editor-styles');
-	add_theme_support(
-			'html5',
-			array(
-					'comment-list',
-					'comment-form',
-					'search-form',
-					'gallery',
-					'caption',
-					'style',
-					'script',
-				)
-		);
-	add_theme_support(
-			'post-formats',
-			array(
-					'gallery',
-					'video',
-				)
-		);
+	add_theme_support('html5', [
+		'comment-list',
+		'comment-form',
+		'search-form',
+		'gallery',
+		'caption',
+		'style',
+		'script',
+	]);
+	add_theme_support('post-formats', []);
 	add_theme_support('post-thumbnails');
 	add_theme_support('responsive-embeds');
 	add_theme_support('title-tag');
@@ -73,9 +61,7 @@ add_action('after_setup_theme', function () {
 	/**
 	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
 	 */
-	register_nav_menus(
-			array(
-					'primary' => __('Primary Menu', 'cradle'),
-				)
-		);
+	register_nav_menus([
+		'primary'   => __('Primary Menu', 'cradle'),
+	]);
 });

@@ -18,33 +18,30 @@ namespace Cradle;
  * @link https://core.trac.wordpress.org/ticket/13239
  * @link https://core.trac.wordpress.org/ticket/22355
  */
-const QUERY_TYPES = array(
-		'404',
-		'archive',
-		'attachment',
-		'author',
-		'category',
-		'date',
-		'embed',
-		'frontpage',
-		'home',
-		'index',
-		'page',
-		'privacypolicy',
-		'search',
-		'single',
-		'singular',
-		'tag',
-		'taxonomy',
-	);
+const QUERY_TYPES = [
+	'404',
+	'archive',
+	'attachment',
+	'author',
+	'category',
+	'date',
+	'embed',
+	'frontpage',
+	'home',
+	'index',
+	'page',
+	'privacypolicy',
+	'search',
+	'single',
+	'singular',
+	'tag',
+	'taxonomy',
+];
 foreach (QUERY_TYPES as $type) {
 	add_filter("{$type}_template_hierarchy", function ($templates) {
-		$new_templates = array_map(function ($template) {
-				return TEMPLATE_DIR . "/{$template}";
-			}, $templates);
-		$templates = array_diff($templates, array('index.php'));
-		$templates = array_merge($templates, $new_templates);
-		return $templates;
+		$new_templates = array_map(fn($template) => TEMPLATE_DIR . "/{$template}", $templates);
+		$templates = array_diff($templates, ['index.php']);
+		return array_merge($templates, $new_templates);
 	});
 }
 
@@ -55,6 +52,6 @@ foreach (QUERY_TYPES as $type) {
  */
 add_filter('template_include', function ($template) {
 	$base_template = get_stylesheet_directory() . '/' . TEMPLATE_DIR . '/' . BASE_TEMPLATE;
-	load_template($base_template, true, array('template' => $template));
+	load_template($base_template, true, ['template' => $template]);
 	return null;
 });

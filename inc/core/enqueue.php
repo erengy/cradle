@@ -7,7 +7,7 @@ namespace Cradle;
  *
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
  */
-function enqueue_style($handle, $src = '', $deps = array(), $ver = null, $media = 'all') {
+function enqueue_style($handle, $src = '', $deps = [], $ver = null, $media = 'all') {
 	wp_enqueue_style($handle, $src, $deps, $ver, $media);
 }
 
@@ -17,6 +17,6 @@ function enqueue_style($handle, $src = '', $deps = array(), $ver = null, $media 
  *
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  */
-function enqueue_script($handle, $src = '', $deps = array(), $ver = null, $in_footer = true) {
+function enqueue_script($handle, $src = '', $deps = [], $ver = null, $in_footer = true) {
 	wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
 }

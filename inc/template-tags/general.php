@@ -10,7 +10,7 @@ namespace Cradle;
  *
  * @link https://developer.wordpress.org/reference/functions/get_template_part/
  */
-function get_template_part($slug, $name = '', $args = array()) {
+function get_template_part($slug, $name = '', $args = []) {
 	do_action("get_template_part_{$slug}", $slug, $name, $args);
 
 	$templates = array();
@@ -31,7 +31,7 @@ function get_template_part($slug, $name = '', $args = array()) {
  *
  * @link https://developer.wordpress.org/reference/functions/get_sidebar/
  */
-function get_sidebar($name = '', $args = array()) {
+function get_sidebar($name = '', $args = []) {
 	do_action('get_sidebar', $name, $args);
 
 	$templates = array();

@@ -8,21 +8,21 @@ const COMMENTS_TEMPLATE = 'partials/comments.php';
 
 const EXCERPT_LENGTH = 30;
 
-const THEME_OPTIONS = array(
-		'contact' => array(
-				'address' => '221B Baker Street',
-				'email'   => 'info@example.com',
-				'phone'   => '+90 555 123 45 67',
-			),
-		'share' => array(
-				'linkedin_source' => 'example.com',
-				'twitter_via' => 'example',
-			),
-		'social' => array(
-				'Facebook'  => '#',
-				'Instagram' => '#',
-				'LinkedIn'  => '#',
-				'Twitter'   => '#',
-				'YouTube'   => '#',
-			),
-	);
+const THEME_OPTIONS = [
+	'contact' => [
+		'address' => '221B Baker Street',
+		'email'   => 'info@example.com',
+		'phone'   => '+90 555 123 45 67',
+	],
+	'share' => [
+		'linkedin_source' => 'example.com',
+		'twitter_via' => 'example',
+	],
+	'social' => [
+		'Facebook'  => '#',
+		'Instagram' => '#',
+		'LinkedIn'  => '#',
+		'Twitter'   => '#',
+		'YouTube'   => '#',
+	],
+];
