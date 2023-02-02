@@ -20,6 +20,8 @@
 		<?php Cradle\get_template_part('partials/footer'); ?>
 	</div>
 
+	<?php Cradle\get_template_part('partials/photoswipe'); ?>
+
 	<?php do_action('get_footer'); ?>
 	<?php wp_footer(); ?>
 </body>
