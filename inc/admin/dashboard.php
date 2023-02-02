@@ -8,9 +8,7 @@ namespace Cradle;
  * @link https://developer.wordpress.org/apis/handbook/dashboard-widgets/#removing-default-dashboard-widgets
  */
 add_action('wp_dashboard_setup', function () {
-	remove_action('welcome_panel', 'wp_welcome_panel');             // Welcome
 	remove_meta_box('dashboard_quick_press', 'dashboard', 'side');  // Quick Draft
-	remove_meta_box('dashboard_primary', 'dashboard', 'side');      // WordPress Events and News
 });
 
 /**
@@ -47,16 +45,4 @@ add_action('dashboard_glance_items', function () {
 			printf('<li class="%1$s-count"><span>%2$s</span></li>', $post_type, $text);
 		}
 	}
-});
-
-/**
- * Hide WordPress version from "At a Glance" dashboard widget
- *
- * @link https://developer.wordpress.org/reference/hooks/update_right_now_text/
- */
-add_filter('update_right_now_text', function ($content) {
-	if (!current_user_can('manage_options')) {
-		return '';
-	}
-	return $content;
 });
