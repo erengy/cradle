@@ -56,6 +56,7 @@ add_action('after_setup_theme', function () {
 	/**
 	 * @link https://developer.wordpress.org/reference/functions/remove_theme_support/
 	 */
+	remove_theme_support('block-templates');
 	remove_theme_support('core-block-patterns');
 
 	/**
