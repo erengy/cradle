@@ -116,7 +116,7 @@ function get_breadcrumbs() {
 					? CUSTOM_POST_TYPES[$post_type]
 					: 'category';
 			if ($terms = get_the_terms($post_id, $taxonomy)) {
-				if ($term = $terms[0]) {
+				if ($term = array_find_first($terms, fn($term) => !$term->parent)) {
 					$breadcrumbs[] = [
 						'url'  => get_term_link($term),
 						'text' => $term->name,
@@ -125,7 +125,9 @@ function get_breadcrumbs() {
 			}
 
 		} else if (is_page()) {
-			if ($_post->post_parent) {
+			$ignored_templates = [];
+			$template_slug = get_page_template_slug($_post);
+			if ($_post->post_parent && !in_array($template_slug, $ignored_templates)) {
 				$page_on_front = intval(get_option('page_on_front'));
 				foreach (array_reverse(get_post_ancestors($_post)) as $post_ancestor) {
 					if ($post_ancestor !== $page_on_front) {
