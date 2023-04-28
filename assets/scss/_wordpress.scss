@@ -102,10 +102,10 @@ p {
 }
 
 .gallery-item {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 0;
-  text-align: center;
-  vertical-align: top;
   width: 100%;
 }
 
