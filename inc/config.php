@@ -6,6 +6,8 @@ const TEMPLATE_DIR = 'templates';
 const BASE_TEMPLATE = '_base.php';
 const COMMENTS_TEMPLATE = 'partials/comments.php';
 
+const PAGINATION_BASE = 'page';
+
 const EXCERPT_LENGTH = 30;
 
 const GOOGLE_TAG_ID = '';

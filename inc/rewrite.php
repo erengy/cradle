@@ -19,3 +19,8 @@ add_filter('rewrite_rules_array', function ($rules) {
 	}
 	return $rules;
 });
+
+add_action('init', function () {
+	global $wp_rewrite;
+	$wp_rewrite->pagination_base = PAGINATION_BASE;
+});
