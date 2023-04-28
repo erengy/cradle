@@ -3,6 +3,19 @@
 namespace Cradle;
 
 /**
+ * Remove date filter for pages
+ *
+ * @link https://developer.wordpress.org/reference/hooks/post_row_actions/
+ */
+add_filter('months_dropdown_results', function ($months, $post_type) {
+	switch ($post_type) {
+		case 'page':
+			return [];
+	}
+	return $months;
+}, 10, 2);
+
+/**
  * Add menu order column for pages
  *
  * @link https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
