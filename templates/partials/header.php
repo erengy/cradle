@@ -21,6 +21,8 @@
 			]);
 			?>
 
+			<?php Cradle\get_template_part('partials/language-switch'); ?>
+
 			<button
 				type="button"
 				class="btn d-block d-lg-none rounded-0 ms-3"
