@@ -18,3 +18,26 @@ add_action('widgets_init', function () {
 		'after_title'   => '</h1>',
 	]);
 });
+
+/**
+ * Remove default widgets and add new ones
+ *
+ * @link https://developer.wordpress.org/reference/functions/unregister_widget/
+ * @link https://developer.wordpress.org/reference/functions/register_widget/
+ */
+add_action('widgets_init', function () {
+	$disabled_widgets = [
+		// e.g. 'PLL_Widget_Calendar'
+	];
+	foreach ($disabled_widgets as $widget) {
+		unregister_widget($widget);
+	}
+
+	$new_widgets = [
+		'Cradle\Widget_Categories',
+		'Cradle\Widget_Recent_Posts',
+	];
+	foreach ($new_widgets as $widget) {
+		register_widget($widget);
+	}
+});
