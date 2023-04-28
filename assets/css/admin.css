@@ -12,3 +12,8 @@
 #postexcerpt #excerpt + p {
   display: none;
 }
+
+/* Order column */
+.fixed .column-menu_order {
+  width: 10%;
+}
