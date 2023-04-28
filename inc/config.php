@@ -8,6 +8,8 @@ const COMMENTS_TEMPLATE = 'partials/comments.php';
 
 const EXCERPT_LENGTH = 30;
 
+const GOOGLE_TAG_ID = '';
+
 const THEME_OPTIONS = [
 	'contact' => [
 		'address' => '221B Baker Street',

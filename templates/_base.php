@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
+	<?php Cradle\get_template_part('partials/script-google'); ?>
 </head>
 
 <body <?php body_class(); ?>>
