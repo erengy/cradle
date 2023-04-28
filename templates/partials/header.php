@@ -18,6 +18,7 @@
 				'menu_id'         => 'primary-menu',
 				'menu_class'      => 'navbar-nav ms-auto',
 				'depth'           => 1,
+				'walker'          => new Cradle\Walker_Nav_Menu_Primary,
 			]);
 			?>
 
@@ -35,4 +36,6 @@
 			</button>
 		</div>
 	</nav>
+
+	<?php Cradle\get_template_part('partials/offcanvas-mobile-menu'); ?>
 </header>
