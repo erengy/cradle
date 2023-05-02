@@ -10,6 +10,8 @@ const PAGINATION_BASE = 'page';
 
 const EXCERPT_LENGTH = 30;
 
+const API_NAMESPACE = 'cradle';
+
 const GOOGLE_TAG_ID = '';
 
 const THEME_OPTIONS = [
