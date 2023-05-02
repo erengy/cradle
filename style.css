@@ -1,14 +1,19 @@
 /*
-Theme Name: Cradle
-Theme URI: https://github.com/erengy/cradle
-Author: Eren Okka
-Author URI: https://erengy.com/
-Description: Cradle is a WordPress starter theme.
-Version: 1.0.0
-Requires at least: 6.1
-Tested up to: 6.1
-Requires PHP: 7.4
-License: GNU General Public License v2 or later
-License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-Text Domain: cradle
+Theme Name:         Cradle
+Theme URI:          https://github.com/erengy/cradle
+Author:             Eren Okka
+Author URI:         https://erengy.com/
+Description:        Cradle is a WordPress starter theme.
+Version:            1.0.0
+Requires at least:  6.1
+Tested up to:       6.1
+Requires PHP:       7.4
+License:            GNU General Public License v2 or later
+License URI:        https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain:        cradle
+Tags:               custom-menu, featured-images, translation-ready
+
+Copyright (C) 2023 Eren Okka.
+
+See `/assets/css/` directory for actual stylesheets.
 */
