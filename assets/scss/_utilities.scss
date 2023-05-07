@@ -1,0 +1,14 @@
+// Utilities
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .border#{$infix}-start {
+      border-left: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color);
+    }
+  }
+}
+
+.inset-0 {
+  inset: 0;
+}

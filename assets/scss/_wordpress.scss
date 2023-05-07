@@ -34,8 +34,8 @@ img {
   }
 
   &.alignleft,
-  &.alignright, {
-    @include media-breakpoint-down(xs) {
+  &.alignright {
+    @include media-breakpoint-down(sm) {
       display: block;
       float: none;
       margin-left: 0;
@@ -124,8 +124,8 @@ p {
 // Accessibility
 
 .screen-reader-text {
-  @include sr-only;
-  @include sr-only-focusable;
+  @include visually-hidden();
+  @include visually-hidden-focusable();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
