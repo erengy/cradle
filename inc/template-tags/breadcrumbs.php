@@ -15,9 +15,14 @@ const CUSTOM_TAXONOMIES = [
 
 function get_post_type_label($post_type) {
 	switch ($post_type) {
-		default:
-			return get_post_type_object($post_type)->label;
+		case 'post':
+			if ($page_for_posts = get_option('page_for_posts')) {
+				return get_the_title($page_for_posts);
+			}
+			break;
 	}
+
+	return get_post_type_object($post_type)->label;
 }
 
 function get_breadcrumbs() {
