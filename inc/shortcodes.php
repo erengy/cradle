@@ -6,6 +6,13 @@
 namespace Cradle;
 
 /**
+ * Caption
+ *
+ * @link https://developer.wordpress.org/reference/hooks/img_caption_shortcode_width/
+ */
+add_filter('img_caption_shortcode_width', '__return_false');
+
+/**
  * Gallery
  *
  * @link https://developer.wordpress.org/reference/functions/gallery_shortcode/
