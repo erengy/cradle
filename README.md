@@ -30,6 +30,13 @@ Cradle is a starter theme for WordPress. Meant to be modified per project and us
 
 	`wp theme activate example`
 
+## Recommended plugins
+
+- [ACF PRO](https://www.advancedcustomfields.com/pro/)
+- [Classic Editor](https://wordpress.org/plugins/classic-editor/)
+- [Classic Widgets](https://wordpress.org/plugins/classic-widgets/)
+- [mu-plugins](https://github.com/erengy/mu-plugins)
+
 ## License
 
 Licensed under [GNU General Public License v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) or later.
