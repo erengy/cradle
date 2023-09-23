@@ -20,7 +20,10 @@ add_action('wp_enqueue_scripts', function () {
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		enqueue_script('comment-reply');
 	}
-	enqueue_script('fontawesome', 'https://use.fontawesome.com/releases/v6.2.1/js/all.js', [], null, false);
+	enqueue_script('fontawesome', 'https://use.fontawesome.com/releases/v6.2.1/js/all.js', [], null, [
+		'strategy'  => 'defer',
+		'in_footer' => false,
+	]);
 	enqueue_script('popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js');
 	enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js', ['popper']);
 	enqueue_script('aos', 'https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js');
@@ -29,10 +32,3 @@ add_action('wp_enqueue_scripts', function () {
 	enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8.4.6/swiper-bundle.min.js');
 	enqueue_script('main', get_asset_url('/js/main.js'), [], last_modified('/assets/js/main.js'));
 });
-
-add_filter('script_loader_tag', function ($tag, $handle, $src) {
-	if ($handle === 'fontawesome') {
-		$tag = str_replace(' src', ' defer src', $tag);
-	}
-	return $tag;
-}, 10, 3);
