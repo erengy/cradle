@@ -63,8 +63,8 @@ add_action('after_setup_theme', function () {
 	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
 	 */
 	register_nav_menus([
-		'primary'   => __('Primary Menu', 'cradle'),
-		'mobile'    => __('Mobile Menu', 'cradle'),
-		'footer'    => __('Footer Menu', 'cradle'),
+		'primary' => __('Primary Menu', 'cradle'),
+		'mobile'  => __('Mobile Menu', 'cradle'),
+		'footer'  => __('Footer Menu', 'cradle'),
 	]);
 });
