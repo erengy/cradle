@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', event => {
 	const pswp = document.querySelector('.pswp');
 	const elements = document.querySelectorAll('.lightbox-item');
 
-	const items = elements.map(element => ({
+	const items = [...elements].map(element => ({
 		src: element.getAttribute('href'),
 		w: element.dataset.width,
 		h: element.dataset.height,
