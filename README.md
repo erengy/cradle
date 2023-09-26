@@ -4,15 +4,11 @@ Cradle is a starter theme for WordPress. Meant to be modified per project and us
 
 ## Usage
 
-1. Clone this repository into `wp-content/themes/`:
+1. [Download](https://github.com/erengy/cradle/archive/refs/heads/master.zip) or [install](https://developer.wordpress.org/cli/commands/theme/install/) this repository to `wp-content/themes/`:
 
-	`git clone https://github.com/erengy/cradle.git example`
+	`wp theme install https://github.com/erengy/cradle/archive/refs/heads/master.zip`
 
-2. Remove the following files and directories:
-
-	- `.git`
-	- `.gitignore`
-	- `README.md`
+2. Remove or modify `README.md`.
 
 3. Replace the following strings in `.php` files:
 
@@ -20,19 +16,23 @@ Cradle is a starter theme for WordPress. Meant to be modified per project and us
 	- `namespace Cradle` → `namespace Example`
 	- `Cradle\` → `Example\`
 
-4. Update the text domain in `style.css`.
+4. Update the header fields in `style.css`.
 
-5. Create translation files:
+5. Build the main stylesheet:
+
+	`sass assets/css/main.scss assets/css/main.css`
+
+6. Create translation files:
 
 	`wp i18n make-pot . languages/example.pot --include="inc,templates"`
 
-6. Activate the theme:
+7. Activate the theme:
 
 	`wp theme activate example`
 
 ## Recommended plugins
 
-- [ACF PRO](https://www.advancedcustomfields.com/pro/)
+- [Advanced Custom Fields](https://www.advancedcustomfields.com/)
 - [Classic Editor](https://wordpress.org/plugins/classic-editor/)
 - [Classic Widgets](https://wordpress.org/plugins/classic-widgets/)
 - [mu-plugins](https://github.com/erengy/mu-plugins)
