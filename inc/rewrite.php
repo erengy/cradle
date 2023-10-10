@@ -2,7 +2,6 @@
 
 namespace Cradle;
 
-add_filter('author_rewrite_rules', '__return_empty_array');
 add_filter('category_rewrite_rules', '__return_empty_array');
 add_filter('date_rewrite_rules', '__return_empty_array');
 add_filter('post_format_rewrite_rules', '__return_empty_array');
